@@ -1,0 +1,372 @@
+/* -- Variaveis Globais*/
+:root {
+    --bg: #161616;
+    --font: #ffffff;
+    --primary: #17E6D3;
+
+    /*fonte*/
+    --font-main: "Orbitron", sans-serif;
+    --font-secondary: "Poppins", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--font);
+    font-family: var(--font-secondary);
+    background-color: var(--bg);
+}
+
+h2{
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    font-weight: 400;
+    padding: 40px 0;
+}
+
+section {
+    padding: 20px 60px;
+    height: 100vh;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    border-radius: 40px;
+    width: 200px;
+    border: none;
+    padding: 5px 10px 5px 5px;
+
+    img {
+        width: 50px;
+        height: auto;
+    }
+
+    h4 {
+        color: var(--font);
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+/*Header*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    padding: 2vw;
+    width: 100%;
+    z-index: 9;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+
+    a {
+        color: var(--font);
+        text-decoration: none;
+        font-family: var(--font-secondary);
+    }
+}
+
+/*  Hero  */
+.hero {
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(img/background.png);
+    background-size: cover;
+    background-position: 50% 50%;
+
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        var(--bg) 10%,   /* cor forte embaixo */
+        rgba(22, 22, 22, 0) 36%   /* transparente subindo */
+    );
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero picture {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* imagem */
+.hero picture img {
+    height: 95vh;   /* controla o tamanho */
+    width: auto;    /* mantém proporção */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: end;
+    height: auto;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: -100px;
+    max-width: 270px;
+    margin-right: 20px;
+    gap: 10px;
+
+    h3 {
+        font-family: var(--font-main);
+        font-size: 3rem;
+        font-weight: 400;
+        letter-spacing: 5px;
+        line-height: 0.85;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+}
+
+h1 {
+    align-items: end;
+    z-index: 0;
+    font-family: var(--font-main);
+    font-size: 11rem;
+    letter-spacing: 15px;
+    line-height: 0.85;
+    margin: 0;
+}
+
+/*Portfolio*/
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50%;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    width: 32%;
+    height: auto;
+    border-radius: 20px;
+    align-items: end;
+    padding: 20px;
+}
+
+.cards a {
+    text-decoration: none;
+    color: var(--font);
+}
+
+.card1 {
+    background-image: url(img/bg-card-01.png);
+    background-size: cover;
+}
+
+.card2 {
+    background-image: url(img/bg-card-01.png);
+    background-size: cover;
+}
+
+.card3 {
+    background-image: url(img/bg-card-01.png);
+    background-size: cover;
+}
+
+/*Serviços*/
+.servicos {
+    background-image: linear-gradient(rgba(22, 22, 22, 0.9), rgba(22, 22, 22, 0.7)),
+    url(img/bg-service.png);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.services {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    gap: 40px;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    height: 70%;
+    gap: 20px;
+    background-color: #000000;
+    padding: 50px;
+    border-radius: 40px;
+    border: 1px solid var(--primary);
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+}
+
+/*Sobre*/
+
+.about {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.aboutEsquerda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.aboutEsquerda img{
+    width: 500px;
+    height: 555px;
+    border-radius: 40px;
+}
+
+.aboutDireita {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 50%;
+    gap: 20px;
+}
+
+.aboutDireita p {
+    width: 75%;
+}
+
+/*Depoimento*/
+.depoimento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+     background-image: linear-gradient(
+    to bottom,
+    rgba(22, 22, 22, 0.9) 20%,
+    rgba(22, 22, 22, 0.6) 50%,
+    rgba(22, 22, 22, 0.6) 60%,
+    rgba(22, 22, 22, 1) 100%),
+    url(img/bg-depoimento.png);
+    background-size: cover;
+}
+
+.depoimento h2 {
+    display: flex;
+    align-items: start;
+    width: 100%;
+}
+
+.depoimentoCards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.depoimentoCard {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    background-color: #000000;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--primary);
+}
+
+.depoimentoCard img{ 
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.depoimentoCard .cliente {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/*CTA*/
+.cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    height: 80vh;
+    background-image: linear-gradient(
+    to bottom,
+    rgba(22, 22, 22, 1) 10%,
+    rgba(22, 22, 22, 0.6) 40%,
+    rgba(22, 22, 22, 0.6) 60%,
+    rgba(22, 22, 22, 0.9) 100%
+),
+url(img/bg-cta.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.cta h2 {
+    padding: 0%;
+}
+
+.cta p {
+    font-size: 1.4rem;
+    color: #ffffffd1;
+    width: 45%;
+    text-align: center;
+    justify-content: center;
+}
+
+.cta button {
+    padding: 10px 30px;
+    background-color: #17e6d174;
+    font-size: 1.2rem;
+    color: var(--font);
+}
